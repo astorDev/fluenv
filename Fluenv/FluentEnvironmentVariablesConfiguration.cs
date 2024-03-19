@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using Microsoft.Extensions.Configuration;
-
-namespace Fluenv;
+﻿namespace Fluenv;
 
 public class FluentEnvironmentVariablesConfiguration
 {
