@@ -1,10 +1,9 @@
 on:
+  workflow_dispatch:
   push:
     paths:
       - ".github/workflows/nuget.yaml"
       - "Fluent/.."
-  
-  workflow_dispatch:
 
 jobs:
   publish-nuget:
