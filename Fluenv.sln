@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluenv", "Fluenv\Fluenv.csproj", "{0EB84370-3472-44D9-9301-52F73BAB0BA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluenv.Tests", "Fluenv.Tests\Fluenv.Tests.csproj", "{0B7047D7-9799-4E12-924E-EF14B4BF7FA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BC88699-03DA-4C4F-8415-CB712749AED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC88699-03DA-4C4F-8415-CB712749AED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC88699-03DA-4C4F-8415-CB712749AED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC88699-03DA-4C4F-8415-CB712749AED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB84370-3472-44D9-9301-52F73BAB0BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB84370-3472-44D9-9301-52F73BAB0BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB84370-3472-44D9-9301-52F73BAB0BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB84370-3472-44D9-9301-52F73BAB0BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7047D7-9799-4E12-924E-EF14B4BF7FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7047D7-9799-4E12-924E-EF14B4BF7FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7047D7-9799-4E12-924E-EF14B4BF7FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7047D7-9799-4E12-924E-EF14B4BF7FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {742BD151-BE1E-496B-969F-C7416F891E3D}
+	EndGlobalSection
+EndGlobal
