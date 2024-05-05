@@ -99,7 +99,7 @@ export GUITAR=LesPaul && dotnet run --Guitar=Firebird && unset GUITAR
 # command line arguments take precedence over everything
 ```
 
-I want to highlight that the priority and the list of configuration sources are not really magical. That's just a way `WebApplication.CreateBuilder(args)` registers its configuration sources. So if we were to scan it's content somewhere we would find the lines below in the order below:
+I want to highlight that the priority and the list of configuration sources are not really magical. That's just a way `WebApplication.CreateBuilder(args)` registers its configuration sources. So if we were to scan it's content, somewhere we would find the lines below in the order below:
 
 ```cs
 configuration.AddJsonFile("appsettings.json");
