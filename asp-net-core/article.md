@@ -112,10 +112,6 @@ configuration.AddCommandLine(args);
 
 ## Special Environment Variables
 
-Let's remove `Properties` folder to get a pure environment not influenced by the `launchSettings`.
-
-
-
 There are also a few environment variables used by `ASP .NET Core` itself. To set up a clear experiment first, let's delete `Properties` folder from the project. Then executing `dotnet run` will get us such logs:
 
 ```
