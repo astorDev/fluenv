@@ -276,3 +276,5 @@ Then virtually any naming of environment variables will work, including the conv
 export BAND_LEAD_GUITARIST=Gilmour && dotnet run && unset BAND_LEAD_GUITARIST
 # Output: Gilmour playing Stratocaster
 ```
+
+![gilmour-playing-stratocaster](gilmour-playing-stratocaster.jpeg)
