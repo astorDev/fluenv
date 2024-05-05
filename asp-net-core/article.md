@@ -188,7 +188,7 @@ export Band__LeadGuitarist=Hendrix && dotnet run && unset Band__LeadGuitarist
 
 ### Fluent environment variables
 
-You may notice that `Band__LeadGuitarist` is a variable name that doesn't really follow the typical shell convention. The conventional form would be: `BAND_LEAD_GUITARIST`. And there's good news about the environment variables configuration provider:
+You may notice that `Band__LeadGuitarist` is a variable name that doesn't really follow the typical shell convention. The conventional form would be: `BAND_LEAD_GUITARIST`. There is one piece of good news about the environment variables configuration provider:
 
 ```sh
 export BAND__LEADGUITARIST=Hendrix && dotnet run && unset BAND__LEADGUITARIST
@@ -196,7 +196,7 @@ export BAND__LEADGUITARIST=Hendrix && dotnet run && unset BAND__LEADGUITARIST
 # So the provider is case incensitive
 ```
 
-But one good news is not quite enough to make it:
+But that piece of good news is not quite enough to make it:
 
 ```sh
 export Band_LeadGuitarist=Gilmour && dotnet run && unset Band_LeadGuitarist
