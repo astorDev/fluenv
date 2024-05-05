@@ -274,4 +274,5 @@ Then virtually any naming of environment variables will work, including the conv
 
 ```sh
 export BAND_LEAD_GUITARIST=Gilmour && dotnet run && unset BAND_LEAD_GUITARIST
+# Output: Gilmour playing Stratocaster
 ```
