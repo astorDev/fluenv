@@ -44,7 +44,7 @@ export GUITAR=LesPaul && dotnet run && unset GUITAR
 
 ## IConfiguration
 
-Note that we access `Guitar` not directly as environment variable, but by using an `IConfiguration` accessor abstraction. By default in `ASP .NET Core` the accessor provides us with two more ways to pick a guitar with environment variables:
+Note that we access `Guitar` not directly as an environment variable, but by using an `IConfiguration` accessor abstraction. By default in `ASP .NET Core` the accessor provides us with two more ways to pick a guitar with environment variables:
 
 `ASPNETCORE_` prefixed variables:
 
@@ -60,7 +60,7 @@ export DOTNET_GUITAR=SG && dotnet run && unset DOTNET_GUITAR
 # Output: Playing SG guitar
 ```
 
-If you wonder what will happen if we use both, here's the asnwer:
+If you wonder what will happen if we use both, here's the answer:
 
 ```sh
 export ASPNETCORE_GUITAR=Telecaster DOTNET_GUITAR=SG && dotnet run && unset ASPNETCORE_GUITAR DOTNET_GUITAR 
@@ -68,7 +68,7 @@ export ASPNETCORE_GUITAR=Telecaster DOTNET_GUITAR=SG && dotnet run && unset ASPN
 # DOTNET_ prefixed variables take precedence
 ```
 
-Of course the `IConfiguration` is not limited to environment variables. `appsettings.json` also can provide us with configuration values, so let's set a guitar there too:
+Of course, the `IConfiguration` is not limited to environment variables. `appsettings.json` also can provide us with configuration values, so let's set a guitar there too:
 
 ```json
 {
@@ -91,7 +91,7 @@ export GUITAR=LesPaul && dotnet run && unset GUITAR
 # Unprefixed environment variable takes precedence over appsettings
 ```
 
-One more way too set a configuration value is by using command line arguments. We already have our `appsettings` values in place, let's also set environment variables, provide command line argument and see what happens:
+One more way to set a configuration value is by using command line arguments. We already have our `appsettings` values in place, let's also set environment variables, provide a command line argument, and see what happens:
 
 ```sh
 export GUITAR=LesPaul && dotnet run --Guitar=Firebird && unset GUITAR 
@@ -99,7 +99,7 @@ export GUITAR=LesPaul && dotnet run --Guitar=Firebird && unset GUITAR
 # command line arguments take precedence over everything
 ```
 
-I want to highlight that the priority and the list of configuration sources is not really magical. That's just a way `WebApplication.CreateBuilder(args)` registers it's configuration sources. So we can
+I want to highlight that the priority and the list of configuration sources are not really magical. That's just a way `WebApplication.CreateBuilder(args)` registers its configuration sources. So we can
 
 ```cs
 configuration.AddJsonFile("appsettings.json");
@@ -116,7 +116,7 @@ Let's remove `Properties` folder to get a pure environment not influenced by the
 
 
 
-There's also a few environment variables used by `ASP .NET Core` itself. To set up a clear experiment first let's delete `Properties` folder from the project. Then executing `dotnet run` will get us such logs:
+There are also a few environment variables used by `ASP .NET Core` itself. To set up a clear experiment first, let's delete `Properties` folder from the project. Then executing `dotnet run` will get us such logs:
 
 ```
 info: Microsoft.Hosting.Lifetime[14]
@@ -129,7 +129,7 @@ info: Microsoft.Hosting.Lifetime[0]
       Content root path: /Users/egortarasov/fluenv/asp-net-core/Concert
 ```
 
-There's a few [Host variables](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0#host-variables) out there. But studying `ASPNETCORE_ENVIRONMENT` and `ASPNETCORE_URLS` seems to be the most important and should give us enough knowledge to operate fluently with any hosting variable.
+There are a few [Host variables](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0#host-variables) out there. But studying `ASPNETCORE_ENVIRONMENT` and `ASPNETCORE_URLS` seems to be the most important and should give us enough knowledge to operate fluently with any hosting variable.
 
 ```sh
 export ASPNETCORE_URLS=http://+:5100 && dotnet run && unset ASPNETCORE_URLS
@@ -139,7 +139,7 @@ export ASPNETCORE_ENVIRONMENT=Wembley && dotnet run && unset ASPNETCORE_ENVIRONM
 # Outputs: Hosting environment: Wembley
 ```
 
-Note, that host variables may behave a little different from all the other variables:
+Note, that host variables may behave a little differently from all the other variables:
 
 ```sh
 export ENVIRONMENT=Carnegie && dotnet run && unset ENVIRONMENT
@@ -147,18 +147,18 @@ export ENVIRONMENT=Carnegie && dotnet run && unset ENVIRONMENT
 # Unprefixed variable has no effect on the ASP .NET Core
 ```
 
-This difference is [confirmed](https://github.com/dotnet/aspnetcore/issues/55379#issuecomment-2081539608) to be intentional. But not every host variable behave that way, only the "bootstrap" variables:
+This difference is [confirmed](https://github.com/dotnet/aspnetcore/issues/55379#issuecomment-2081539608) to be intentional. But not every host variable behaves that way, only the "bootstrap" variables:
 
 ```sh
 export URLS=http://+:5800 && dotnet run && unset URLS
 # Outputs: Now listening on: http://[::]:5800
-# Here unprefixed variables not just affects ASP .NET Core
+# Here unprefixed variables not just affect ASP .NET Core
 # but take precedence over a prefixed variable
 ```
 
 ## Sections And Underscored
 
-`Microsoft.Extensions.Configuration` framework supports nested configuration, as well. Let's first see how would it work with json based configuration.
+`Microsoft.Extensions.Configuration` framework supports nested configuration, as well. Let's first see how it would work with json based configuration.
 
 `appsettings.json`:
 
@@ -182,7 +182,7 @@ app.Logger.LogInformation("{guitarist} playing {guitar}",
 //Output: Clapton playing Stratocaster
 ```
 
-For "nesting" environments variables double underscore is used:
+For "nesting" environment variables double underscore is used:
 
 
 ```sh
@@ -194,7 +194,7 @@ export Band__LeadGuitarist=Hendrix && dotnet run && unset Band__LeadGuitarist
 
 ### Fluent environment variables
 
-You may notice that `Band__LeadGuitarist` is a variable name that doesn't really follow typical shell convention. The conventional form would be: `BAND_LEAD_GUITARIST`. And there's a good news about environment variables configuration provider:
+You may notice that `Band__LeadGuitarist` is a variable name that doesn't really follow the typical shell convention. The conventional form would be: `BAND_LEAD_GUITARIST`. And there's good news about the environment variables configuration provider:
 
 ```sh
 export BAND__LEADGUITARIST=Hendrix && dotnet run && unset BAND__LEADGUITARIST
@@ -202,7 +202,7 @@ export BAND__LEADGUITARIST=Hendrix && dotnet run && unset BAND__LEADGUITARIST
 # So the provider is case incensitive
 ```
 
-But one good news it's not quite enough to make it:
+But one good news is not quite enough to make it:
 
 ```sh
 export Band_LeadGuitarist=Gilmour && dotnet run && unset Band_LeadGuitarist
@@ -233,7 +233,7 @@ public static IEnumerable<string> Keys(string rawKey)
 }
 ```
 
-And the provider will load all the configuration key value pairs we can get from the environment variables.
+And the provider will load all the configuration key-value pairs we can get from the environment variables.
 
 ```cs
 public class Provider : ConfigurationProvider
@@ -256,7 +256,7 @@ public class Provider : ConfigurationProvider
 }
 ```
 
-I've already has the provider as a nuget package, so you can just use it:
+I've already made the provider as a nuget package, so you can just use it:
 
 ```sh
 dotnet add package Fluenv
