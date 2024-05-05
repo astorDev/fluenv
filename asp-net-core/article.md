@@ -121,8 +121,6 @@ info: Microsoft.Hosting.Lifetime[0]
       Application started. Press Ctrl+C to shut down.
 info: Microsoft.Hosting.Lifetime[0]
       Hosting environment: Production
-info: Microsoft.Hosting.Lifetime[0]
-      Content root path: /Users/egortarasov/fluenv/asp-net-core/Concert
 ```
 
 There are a few [Host variables](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0#host-variables) out there. But studying `ASPNETCORE_ENVIRONMENT` and `ASPNETCORE_URLS` seems to be the most important and should give us enough knowledge to operate fluently with any hosting variable.
