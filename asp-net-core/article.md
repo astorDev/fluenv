@@ -123,7 +123,7 @@ info: Microsoft.Hosting.Lifetime[0]
       Hosting environment: Production
 ```
 
-There are a few [Host variables](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0#host-variables) out there. But studying `ASPNETCORE_ENVIRONMENT` and `ASPNETCORE_URLS` seems to be the most important and should give us enough knowledge to operate fluently with any hosting variable.
+There are quite a few [Host variables](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0#host-variables). But `ASPNETCORE_ENVIRONMENT` and `ASPNETCORE_URLS` seem to be the most important and studying them should give us enough knowledge to operate fluently with any other hosting variable.
 
 ```sh
 export ASPNETCORE_URLS=http://+:5100 && dotnet run && unset ASPNETCORE_URLS
