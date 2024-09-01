@@ -6,7 +6,7 @@ public class FluentEnvironmentVariablesConfiguration
     {
         yield return rawKey;
 
-        var parts = rawKey.Split("_").Where(p => p != "").ToArray();
+        var parts = rawKey.Split('_').Where(p => p != "").ToArray();
 
         for (var i = 1; i < parts.Length; i++)
         {
@@ -53,7 +53,7 @@ public class FluentEnvironmentVariablesConfiguration
                 return Keys(key.Replace(prefix, "")).Select(k => new KeyValuePair<string, string?>(k, value));
             }
 
-            return ArraySegment<KeyValuePair<string, string?>>.Empty;
+            return Array.Empty<KeyValuePair<string, string?>>();
         }
     }
 }
