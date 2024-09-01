@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - ".github/workflows/nuget.yaml"
-      - "Fluent/.."
+      - "Fluenv/.."
 
 jobs:
   publish-nuget:
@@ -12,4 +12,4 @@ jobs:
       - uses: astorDev/versy/calver/nuget@main
         with:
           project: Fluenv/Fluenv
-          nuget_api_key: ${{ secrets.NUGET_API_KEY }}
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
